@@ -73,3 +73,10 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 
+## TODO
+
+git initialization (1)
+{ .annotate }
+
+1. need to explain how to setup the GitHub repo and init the git env
+
