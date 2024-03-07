@@ -18,7 +18,7 @@ That will create a new homelab-docs directory that is git and GitHub related.
 Now we can install mkdocs.
 
 
-```
+```linenums="1"
 rademakr@prismpi[~/homelab-docs]$ python -m venv venv
 rademakr@prismpi[~/homelab-docs]$ source venv/bin/activate
 (venv) rademakr@prismpi[~/homelab-docs]$ pip --version
@@ -28,7 +28,13 @@ pip 23.0.1 from /home/rademakr/homelab-docs/venv/lib/python3.11/site-packages/pi
 ```
 This will install mkdocs-material.
 
-We'll create our website with the following command:
+!!! note
+  All these lines have their importance. 
+  On line 1, we create a python virtual environment. Virtual environments are important to isolate the project (in this case mkdocs) from the rest of the system.
+  Line 2 shows how to activate the virtual environment which will be the default Python interpreter for the duration of the shell session.  
+!!!
+
+We'll create our files with the following command:
 
 `(venv) rademakr@prismpi[~/homelab-docs]$ mkdocs new .`
 
