@@ -2,9 +2,20 @@
 
 ### Prerequisites
 
+You'll need python & pip installed
+If you want seemless deployments to GitHub pages, you'll also need a GitHub account.
+
 ## Installation
 
-You'll need python & pip installed
+First things first, create a new public repository in your GitHub space. I will call mine `homelab-docs`.
+Once that is done, you can clone the repo on your local server:
+
+```
+git clone git@github.com:rademakr/homelab-docs.git
+```
+
+That will create a new homelab-docs directory that is git and GitHub related.
+Now we can install mkdocs.
 
 
 ```
