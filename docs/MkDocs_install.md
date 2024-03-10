@@ -49,6 +49,7 @@ The `mkdocs.yml` file is where you'll set all the settings for the website, whil
 that will be the first tab of the homepage. We'll be able to remove that file later, or update it with the text you want...
 
 The idea is to add one .md file per project. Thus I have this file named `mkdocs.md` for the instructions on setting up mkdocs.
+Might also want to create a "fixed" index, with directories per project in order to keep the upper hand on the sorting of pages (I believe by default, mkdocs sorts alphabetically).
 
 I will add one for Ansible, and a few to describe specific middleware configuration.
 
