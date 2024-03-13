@@ -182,8 +182,8 @@ After configuration, your "Proxy Hosts" should appear as follows:
 Access Nextcloud's web interface securely over HTTPS via your FQDN. From the "Proxy Hosts" list, click the FQDN link in the "SOURCE" column to verify the connection.
 
 
-Helpful docker commands:
-------------------------
+Helpful docker commands
+-----------------------
 
 Retrieve logs from all containers:
 
