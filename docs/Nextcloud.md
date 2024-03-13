@@ -193,7 +193,7 @@ docker compose logs (1)
 ```
 </div>
 
-1. This will dump all the different containers' logs in your terminal. You can grep for a specific container is you wish or pipe it to `more`.
+1. This will dump all the different containers' logs in your terminal. You can grep for a specific container if you wish, or pipe it to `more`.
 
 Connect to the Nextcloud container using bash:
 
@@ -206,7 +206,7 @@ docker exec -it nextcloud-nextcloud-app-1 /bin/bash (1)
 1. This will connect you to the nextcloud-app instance with a bash shell.
 
 !!! note
-    Not all docker images come with a bash shell packaged in. One of the DB instances running mariadb is running in alpine and you'll have to specify `sh`
+    Not all Docker containers come with a bash shell packaged in. One of the DB instances running mariadb is running in alpine and you'll have to specify `sh` instead of `bash`
 
 To reset the Nextcloud admin password from the command line:
 
@@ -216,7 +216,7 @@ docker exec -it -u www-data nextcloud-nextcloud-app-1 php /var/www/html/occ user
 ```
 </div>
 
-1. If you forgot your admin password... the "admin" is the account you create once you connect to the Nextcloud web UI
+1. If you forgot your admin password... "admin" is the account you created when you initialy connected to the Nextcloud web UI
 
 Stopping all running containers:
 
