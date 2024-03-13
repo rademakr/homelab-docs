@@ -200,7 +200,7 @@ sudo usermod -aG docker rademakr (1)
 Essential details
 -----------------
 
-Configuration adjustments are necessary within the Nextcloud instance. Modify the `config/config.php` file to include your Fully Quqlidied Domain Name (FQDN) in the trusted domains array:
+Configuration adjustments are necessary within the Nextcloud instance. Modify the `config/config.php` file to include your Fully Qualified Domain Name (FQDN) in the trusted domains array:
 
 
 ```py
