@@ -4,7 +4,8 @@ While services like Google Drive, Dropbox, and OneDrive are practical options fo
 
 I utilize a Raspberry Pi 5 equipped with a [NVMe hat](https://www.amazon.fr/dp/B0CPLF6JYX?psc=1&ref=ppx_yo2ov_dt_b_product_details) and a [NVMe SSD 2TB drive](https://www.amazon.fr/dp/B0CP42QVT8?psc=1&ref=ppx_yo2ov_dt_b_product_details), thus ensuring ample disk space for my needs.
 
-## Prerequisites
+Prerequisites
+-------------
 
 <div class="annotate" markdown>
 
@@ -15,22 +16,26 @@ I utilize a Raspberry Pi 5 equipped with a [NVMe hat](https://www.amazon.fr/dp/B
 
 1. Using a Raspberry Pi for this project is cost-effective, not only in terms of initial investment but also for ongoing power consumption, with only about 5W used when idle. However, if you already have a server, you can follow the same installation steps on that hardware and operating system.
 
-### Docker
+Docker
+------
 
 Although Docker is a prerequisite, let’s briefly cover its installation, as we won’t be using the version that comes with the operating system’s packages. Instead, we’ll follow the installation guide provided on the [Docker website](https://docs.docker.com/engine/install/debian/).
 
 
-### Reverse proxy
+Reverse proxy
+-------------
 
 To avoid exposing the Nextcloud instance directly and to keep ports 80 & 443 available for other services, a reverse proxy is essential. Despite being more familiar with Apache, in the spirit of learning, I chose Nginx, specifically the [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager) project, which has a Docker image and offers an intuitive UI. This image is also available on [Docker Hub](https://hub.docker.com/r/jc21/nginx-proxy-manager).
 
 
-### Nextcloud
+Nextcloud
+---------
 
 Nextcloud offers several installation options and provides a [Docker image](https://hub.docker.com/_/nextcloud) alongside instructions for setting it up.
 
 
-### docker-compose.yml
+docker-compose.yml
+------------------
 
 Both Nginx and Nextcloud require seperate database containers.
 We'll create one `docker-compose.yml` file to manage all four Docker images:
@@ -118,16 +123,18 @@ services:
 This `docker-compose.yml` file should be located in the `/opt/nextcloud` directory.
 
 
-### Starting up
+Starting up
+-----------
 
-To launch the services defined in the docker-compose.yml file, use the following command:
+To launch the services defined in the `docker-compose.yml` file, use the following command:
 
 ```bash
 sudo docker compose up -d
 ```
 
 
-### Helpful docker commands:
+Helpful docker commands:
+------------------------
 
 Retrieve logs from all containers:
 
@@ -176,7 +183,7 @@ docker compose stop (1)
 Stop and remove all containers, networks and volumes:
 
 ```
-docker compose down (1)
+docker compose down
 ```
 
 
@@ -190,7 +197,8 @@ sudo usermod -aG docker rademakr (1)
 
 1. Add you user account to the `docker` group. Avoids having to run `sudo` for (most) docker commands.
 
-### Essential details
+Essential details
+-----------------
 
 Configuration adjustments are necessary within the Nextcloud instance. Modify the `config/config.php` file to include your Fully Quqlidied Domain Name (FQDN) in the trusted domains array:
 
@@ -217,6 +225,7 @@ docker run --name watchtower -v /var/run/docker.sock:/var/run/docker.sock contai
 ```
 
 
-### TODO
+TODO
+----
 
 Verify that all necessary crontabs are in place, especially for managing Nginx and Let's Encrypt certificate renewals.
