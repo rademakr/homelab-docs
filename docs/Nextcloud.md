@@ -132,6 +132,55 @@ To launch the services defined in the `docker-compose.yml` file, use the followi
 sudo docker compose up -d
 ```
 
+!!! warning
+    See section "Essential details" before continuing. The `config/config.php` file must be updated before moving on.
+
+
+NPM config
+----------
+
+Navigate to the Nginx Proxy Manager by entering http://<ip-of-nginx>:81 in your web browser, where you will be greeted by a login screen:
+
+[//]: <> ( ![Image title](docs/assets/images/NPM_1_login.PNG){ align=left } )
+![Login](../assets/images/NPM_1_login.PNG){ loading=lazy }
+
+
+!!! Note
+    The default login credentials are `admin@example.com` for the username and `changeme` for the password. Upon first login, you will be prompted to change these to secure ones.
+
+
+Once logged in, the dashboard will resemble the following:
+
+![Main](../assets/images/NPM_2_main.PNG){ loading=lazy }
+
+To begin creating a proxy host, navigate to "Hosts" and then "Proxy Hosts" from the top menu, or click "Proxy Hosts" on the main dashboard. Initially, you will see no existing hosts until you add a new one by selecting "Add Proxy Host":
+
+![Edit Proxy Host](../assets/images/NPM_4_edit_proxy_1.PNG){ loading=lazy }
+
+When adding the proxy host:
+
+<div class="annotate" markdown>
+* Under "Domain Names," enter the FQDN to access Nextcloud, such as `nextcloud.example.com`.
+* For "Scheme," select `http` since network traffic will be encrypted by the reverse proxy. (1)
+* In "Forward Hostname / IP," input the Docker container's name.
+* Set "Forward Port" to 80.
+* Enable "Block Common Exploits" for added security.
+</div>
+
+1. The traffic will be secure from the internet to the reverse proxy, while the connection from the reverse proxy to the Nextcloud container will be unencrypted. This is commonly acceptable within a trusted network.
+
+Next, under the SSL tab within "Edit Proxy Host," configure the SSL certificate:
+
+![Edit Proxy Host SSL](../assets/images/NPM_5_edit_proxy_2_SSL.PNG){ loading=lazy }
+
+Choose "Request a new SSL Certificate" and create one with Let's Encrypt. This process uses Certbot and should be seamless.
+
+After configuration, your "Proxy Hosts" should appear as follows:
+
+![Proxy Hosts](../assets/images/NPM_3_proxy_hosts.PNG){ loading=lazy }
+
+Access Nextcloud's web interface securely over HTTPS via your FQDN. From the "Proxy Hosts" list, click the FQDN link in the "SOURCE" column to verify the connection.
+
 
 Helpful docker commands:
 ------------------------
