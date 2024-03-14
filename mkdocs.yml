@@ -48,6 +48,8 @@ nav:
         - 'Setup': Nextcloud.md
   - TODO:
         - 'Build or document': TODO.md
+  - CV:
+        - 'My CV': CV-O.Rademakers_2024.md
 
 markdown_extensions:
   - pymdownx.highlight:
