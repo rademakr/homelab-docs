@@ -4,13 +4,15 @@ Olivier RADEMAKERS
 
 117, Blvd. de la République  
 92420 Vaucresson, France  
+  
 Born on August 25th, 1972  
 Nationality: Belgian  
+Fluent in English & French
 
 📞 +33 (0)6 51 43 65 06  
 ✉️  olivier.rademakers@gmail.com  
 🔗 [LinkedIn Profile](https://www.linkedin.com/in/orademakers/)  
-🌐 [Personal Website](https://rademakr.github.io/)
+🌐 [Personal Website](https://rademakr.github.io/) 
 
 ---
 
