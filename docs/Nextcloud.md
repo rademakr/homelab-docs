@@ -1,4 +1,4 @@
-# Nextcloud
+ # Nextcloud
 
 While services like Google Drive, Dropbox, and OneDrive are practical options for cloud storage, they can be limiting with their available disk space—making it challenging to host large files such as a music library. Nextcloud eliminates this limitation by enabling you to host your own cloud service that’s accessible from anywhere.
 
@@ -180,6 +180,9 @@ After configuration, your "Proxy Hosts" should appear as follows:
 ![Proxy Hosts](../assets/images/NPM_3_proxy_hosts.PNG){ loading=lazy }
 
 Access Nextcloud's web interface securely over HTTPS via your FQDN. From the "Proxy Hosts" list, click the FQDN link in the "SOURCE" column to verify the connection.
+
+You should reach Nextcloud's login page:
+![Proxy Hosts](../assets/images/NC_1_login.PNG){ loading=lazy }
 
 
 Helpful docker commands
