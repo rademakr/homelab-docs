@@ -12,6 +12,50 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
 
 * inventory  
   This file will organize your differnet hosts in groups. The same host can be in several groups. These groups are linked to the roles we will be using.
+  For example:  
+  ```yaml
+  [rpi5]
+  clearwhite
+  plexpi
+  tallglass
+
+  [rpi4]
+  prismpi
+
+  [rpi3]
+  pihole3
+  clearblue
+
+  [plex_servers]
+  plexpi
+
+  [radius_servers]
+  prismpi
+
+  [ldap_certs]
+  prismpi
+  clearwhite
+
+  [ldap_servers]
+  prismpi
+  clearwhite
+
+  [web_servers]
+  clearwhite
+  prismpi
+  tallglass
+
+  [monitoring_servers]
+  prismpi
+
+  [postfix_client]
+  clearwhite
+  prismpi
+  pihole3
+  clearblue
+  plexpi
+  tallglass
+  ```
 
 * ansible.cfg
   This file contains the "default" variables that are set, so you don't have to pass them on the command line.  
