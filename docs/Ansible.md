@@ -13,7 +13,7 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
 * inventory  
   This file will organize your differnet hosts in groups. The same host can be in several groups. These groups are linked to the roles we will be using.
   For example:  
-  ```yaml
+  ```shell
   [rpi5]
   clearwhite
   plexpi
@@ -60,7 +60,7 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
 * ansible.cfg
   This file contains the "default" variables that are set, so you don't have to pass them on the command line.  
   For example  
-  ```yaml
+  ```shell
   [defaults]
   inventory = inventory
   private_key_file = ~/.ssh/id_automate
@@ -68,6 +68,8 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
   remote_user = automate
   deprecation_warnings = False
   ```
+
+
 
 ```shell
 rademakr@clearblue[~/ansible/ansible-homelab]$ ssha
@@ -229,7 +231,7 @@ tallglass                  : ok=12   changed=1    unreachable=0    failed=0    s
   # Explanation: This task adds an SSH key for the user 'automate' to enable SSH access.
   authorized_key:
     user: automate
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA7IUa5QX6XCbRS7Et1qb87QCLH+HlV6e+Cqd6d4A/xn automate"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1MTE5AAAAIA7IUa5QX6XCbRS7Et1pb87QCLH+HlV6e+Cqd6d4A/xn automate"
 
 - name: Set PS1 prompt color
   tags: always
