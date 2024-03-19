@@ -46,6 +46,8 @@ nav:
         - 'Start Here': index.md
   - Nextcloud:
         - 'Setup': Nextcloud.md
+  - Ansible:
+        - 'Ansible': Ansible.md
   - TODO:
         - 'Build or document': TODO.md
   - CV:
