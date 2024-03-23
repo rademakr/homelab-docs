@@ -13,6 +13,7 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
 * inventory  
   This file will organize your differnet hosts in groups. The same host can be in several groups. These groups are linked to the roles we will be using.
   For example:  
+
   ```shell
   [rpi5]
   clearwhite
@@ -59,8 +60,9 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
 
 * ansible.cfg
   This file contains the "default" variables that are set, so you don't have to pass them on the command line.  
-  For example  
-  ```shell
+  For example 
+
+  ```s
   [defaults]
   inventory = inventory
   private_key_file = ~/.ssh/id_automate
@@ -68,6 +70,24 @@ The main configuration files required for Anaible are `ansible.cfg` and `invento
   remote_user = automate
   deprecation_warnings = False
   ```
+
+We can now start organizing our roles and taskbooks. Taskbooks are playbooks that are limited to their scope; a specific role.  
+We'll need a directory structure for the roles.  
+If my base directory is `~/ansible/ansible-homelab`, I need to create a `roles` directory, and below that, a directory for each specific role. For example if I have two roles; base and web_servers, I would have a directory structure like this:  
+
+```shell
+~/ansible/ansible-homelab/roles/base
+~/ansible/ansible-homelab/roles/web-servers
+```
+
+and with the roles' subdirectories it would look like this:  
+
+```shell
+~/ansible/ansible-homelab/roles/base/files
+~/ansible/ansible-homelab/roles/base/tasks
+~/ansible/ansible-homelab/roles/web-servers/files
+~/ansible/ansible-homelab/roles/web-servers/tasks
+```
 
 
 
@@ -80,7 +100,7 @@ rademakr@clearblue[~/ansible/ansible-homelab]$ ansible-playbook -t bootstrap hom
 ```
 
 ```shell
-PLAY [all] *****************************************************************************************************************************************
+PLAY [all] ******************************************************************************************************************************
 
 TASK [Gathering Facts] *****************************************************************************************************************************************
 ok: [clearwhite]
@@ -98,7 +118,7 @@ ok: [clearwhite]
 ok: [clearblue]
 ok: [pihole3]
 
-PLAY [all] *****************************************************************************************************************************************
+PLAY [all] ******************************************************************************************************************************
 
 TASK [Gathering Facts] *****************************************************************************************************************************************
 ok: [clearwhite]
@@ -162,7 +182,7 @@ ok: [prismpi] => (item=/etc/DIR_COLORS)
 ok: [clearblue] => (item=/etc/DIR_COLORS)
 ok: [pihole3] => (item=/etc/DIR_COLORS)
 
-PLAY [all] ******************************************************************************************************************************************
+PLAY [all] *******************************************************************************************************************************
 
 TASK [Gathering Facts] ******************************************************************************************************************************************
 ok: [clearwhite]
@@ -216,7 +236,7 @@ PLAY [monitoring_servers] ******************************************************
 TASK [Gathering Facts] ******************************************************************************************************************************************
 ok: [prismpi]
 
-PLAY RECAP ******************************************************************************************************************************************
+PLAY RECAP *******************************************************************************************************************************
 clearblue                  : ok=11   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 clearwhite                 : ok=14   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 pihole3                    : ok=11   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
