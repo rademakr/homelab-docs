@@ -41,8 +41,6 @@ Both Nginx and Nextcloud require seperate database containers.
 We'll create one `docker-compose.yml` file to manage all four Docker images:
 
 ```yaml
-version: '3'
-
 volumes:
   nextcloud-data:
   nextcloud-db:
@@ -246,6 +244,44 @@ sudo usermod -aG docker rademakr (1)
 
 1. Add you user account to the `docker` group. Avoids having to run `sudo` for (most) docker commands.
 
+Remove Volumes:
+
+<div class="annotate" markdown>
+```
+docker volume ls  # List volumes
+docker volume rm <volume_name> (1)
+```
+</div>
+
+1. If you want to completely reset the date, including uploaded files and database. Be careful--this erases all Nextcloud data.
+
+Recreate Nextcloud from scratch with freshly pulled Images:
+
+<div class="annotate" markdown>
+```
+docker compose pull  # Pull all new images for described instances in the dockerfile
+docker compose up -d (1)
+```
+</div>
+
+1. Once this step is done, you'll need to navigate to https://my.zen-cloud.net to init your admin account + reinstall app on phone and desktop
+
+
+Connecting to the instanaces
+----------------------------
+
+Connecting to the main Nextcloud-app instance:
+
+```bash
+docker exec -it nextcloud-nextcloud-app-1 /bin/bash
+```
+
+or the Nextcloud-db:
+
+```bash
+docker exec -it nextcloud-nextcloud-db-1 sh
+```
+
 Essential details
 -----------------
 
@@ -277,4 +313,3 @@ docker run --name watchtower -v /var/run/docker.sock:/var/run/docker.sock contai
 TODO
 ----
 
-Verify that all necessary crontabs are in place, especially for managing Nginx and Let's Encrypt certificate renewals.
