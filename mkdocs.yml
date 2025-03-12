@@ -46,13 +46,10 @@ nav:
         - 'Start Here': index.md
   - Nextcloud:
         - 'Setup': Nextcloud.md
-<<<<<<< HEAD
   - Raspberry Pi:
         - 'RPi stuff' : RPi.md
-=======
   - Ansible:
         - 'Ansible': Ansible.md
->>>>>>> 78bd9f6ef8cfa943011b60f997dc417f59769f3d
   - TODO:
         - 'Build or document': TODO.md
   - CV:
@@ -77,4 +74,4 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.twemoji
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/rademakr"  target="_blank" rel="noopener">Olivier Rademakers</a>
+  &copy; 2025 <a href="https://github.com/rademakr"  target="_blank" rel="noopener">Olivier Rademakers</a>
