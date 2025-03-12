@@ -81,7 +81,7 @@ _System Administrator and Technical Support_
 1997 – 2003
 
 **SCHLUMBERGER - CIS**  
-_Helpdesk & PC Desktop Support_  
+_Helpdesk, PC Desktop Support & User Training_  
 1993 – 1997
 
 ---

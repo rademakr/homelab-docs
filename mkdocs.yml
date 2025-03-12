@@ -46,6 +46,8 @@ nav:
         - 'Start Here': index.md
   - Nextcloud:
         - 'Setup': Nextcloud.md
+  - Raspberry Pi:
+        - 'RPi stuff' : RPi.md
   - TODO:
         - 'Build or document': TODO.md
   - CV:
