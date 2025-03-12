@@ -296,7 +296,7 @@ docker compose up -d (1)
 ```
 </div>
 
-1. Once this step is done, you'll need to navigate to https://my.zen-cloud.net to init your admin account + reinstall app on phone and desktop
+1. Once this step is done, you'll need to navigate to https://my.zen-cloud.net to init your admin account + reinstall apps on phone and desktop
 
 
 Connecting to the instanaces
