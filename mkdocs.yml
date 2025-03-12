@@ -46,8 +46,13 @@ nav:
         - 'Start Here': index.md
   - Nextcloud:
         - 'Setup': Nextcloud.md
+<<<<<<< HEAD
   - Raspberry Pi:
         - 'RPi stuff' : RPi.md
+=======
+  - Ansible:
+        - 'Ansible': Ansible.md
+>>>>>>> 78bd9f6ef8cfa943011b60f997dc417f59769f3d
   - TODO:
         - 'Build or document': TODO.md
   - CV:

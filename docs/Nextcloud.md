@@ -1,4 +1,4 @@
-# Nextcloud
+ # Nextcloud
 
 While services like Google Drive, Dropbox, and OneDrive are practical options for cloud storage, they can be limiting with their available disk space—making it challenging to host large files such as a music library. Nextcloud eliminates this limitation by enabling you to host your own cloud service that’s accessible from anywhere.
 
@@ -21,6 +21,35 @@ Docker
 
 Although Docker is a prerequisite, let’s briefly cover its installation, as we won’t be using the version that comes with the operating system’s packages. Instead, we’ll follow the installation guide provided on the [Docker website](https://docs.docker.com/engine/install/debian/).
 
+Setup Docker apt repository
+
+```shell
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
+
+To install the latest version
+
+```shell
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+Test
+
+```shell
+sudo docker run hello-world
+```
 
 Reverse proxy
 -------------
@@ -178,6 +207,9 @@ After configuration, your "Proxy Hosts" should appear as follows:
 ![Proxy Hosts](../assets/images/NPM_3_proxy_hosts.PNG){ loading=lazy }
 
 Access Nextcloud's web interface securely over HTTPS via your FQDN. From the "Proxy Hosts" list, click the FQDN link in the "SOURCE" column to verify the connection.
+
+You should reach Nextcloud's login page:
+![Proxy Hosts](../assets/images/NC_1_login.PNG){ loading=lazy }
 
 
 Helpful docker commands
