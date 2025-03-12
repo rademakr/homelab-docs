@@ -1,5 +1,6 @@
  # Nextcloud
 
+
 While services like Google Drive, Dropbox, and OneDrive are practical options for cloud storage, they can be limiting with their available disk space—making it challenging to host large files such as a music library. Nextcloud eliminates this limitation by enabling you to host your own cloud service that’s accessible from anywhere.
 
 I utilize a Raspberry Pi 5 equipped with a [NVMe hat](https://www.amazon.fr/dp/B0CPLF6JYX?psc=1&ref=ppx_yo2ov_dt_b_product_details) and a [NVMe SSD 2TB drive](https://www.amazon.fr/dp/B0CP42QVT8?psc=1&ref=ppx_yo2ov_dt_b_product_details), thus ensuring ample disk space for my needs.
@@ -302,7 +303,7 @@ docker compose up -d (1)
 Connecting to the instanaces
 ----------------------------
 
-Connecting to the main Nextcloud-app instance :
+Connecting to the main Nextcloud-app instance:
 
 ```bash
 docker exec -it nextcloud-nextcloud-app-1 /bin/bash
