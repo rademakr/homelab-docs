@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/Ansible/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/CV-O.Rademakers_2024/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/Nextcloud/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/RPi/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+    <url>
+         <loc>https://rademakr.github.io/homelab-docs/TODO/</loc>
+         <lastmod>2025-03-12</lastmod>
+    </url>
+</urlset>
