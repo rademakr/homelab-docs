@@ -302,7 +302,7 @@ docker compose up -d (1)
 Connecting to the instanaces
 ----------------------------
 
-Connecting to the main Nextcloud-app instance:
+Connecting to the main Nextcloud-app instance :
 
 ```bash
 docker exec -it nextcloud-nextcloud-app-1 /bin/bash
